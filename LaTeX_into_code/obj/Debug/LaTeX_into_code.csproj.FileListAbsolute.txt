@@ -1,0 +1,10 @@
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\bin\Debug\LaTeX_into_code.exe.config
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\bin\Debug\LaTeX_into_code.exe
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\bin\Debug\LaTeX_into_code.pdb
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\obj\Debug\LaTeX_into_code.csprojAssemblyReference.cache
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\obj\Debug\LaTeX_into_code.Form1.resources
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\obj\Debug\LaTeX_into_code.Properties.Resources.resources
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\obj\Debug\LaTeX_into_code.csproj.GenerateResource.cache
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\obj\Debug\LaTeX_into_code.csproj.CoreCompileInputs.cache
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\obj\Debug\LaTeX_into_code.exe
+M:\M\zgrywane\programowanie\C#\LaTeX_into_code\LaTeX_into_code\obj\Debug\LaTeX_into_code.pdb
