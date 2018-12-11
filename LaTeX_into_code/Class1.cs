@@ -8,5 +8,9 @@ namespace LaTeX_into_code
 {
     class Class1
     {
+        double myFunction (double x, double y)
+        {
+            return x + y;
+        }
     }
 }
