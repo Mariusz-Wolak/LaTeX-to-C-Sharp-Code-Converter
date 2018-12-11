@@ -8,9 +8,11 @@ namespace LaTeX_into_code
 {
     class Class1
     {
-        double myFunction (double x, double y)
+        double myFunction (double **arg_1**)
         {
-            return x + y;
+            double x = 0;
+            //comment
+            return x;
         }
     }
 }
