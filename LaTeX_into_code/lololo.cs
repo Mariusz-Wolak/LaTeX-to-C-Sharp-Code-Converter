@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +8,11 @@ namespace LaTeX_into_code
 {
     class Class1
     {
-        double myFunction (double **arg_1**)
+        double myFunction (double )
         {
-            //insertingHere
+            przerobione na kod
+			przerobione na kod2
+			//insertingHere
         }
     }
 }
