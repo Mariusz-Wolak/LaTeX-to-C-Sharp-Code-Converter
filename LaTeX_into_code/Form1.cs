@@ -19,26 +19,27 @@ namespace LaTeX_into_code
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var myStreamReader = new System.IO.StreamReader("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\Class1.txt");
-            String sampClassString = Convert.ToString(myStreamReader);
-            myStreamReader.Close();
-
-            String RTB_txt = richTextBox1.Text;
-            String fileName = richTextBox2.Text + ".cs";
-            String[] RTB_txt_array = RTB_txt.Split('^');
-            MessageBox.Show(RTB_txt_array[0]);
-            MessageBox.Show(RTB_txt_array[1]);
-
-            sampClassString = sampClassString.Replace("myFunction", fileName);
-            sampClassString = sampClassString.Replace("double arg", "double " + RTB_txt_array[0]+ ", double " + RTB_txt_array[1]);
-            //Insert index of //comment
-
+            string defaultClass = System.IO.File.ReadAllText(@"M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\Class1.txt");
+           
+            string RTB_txt = richTextBox1.Text;
+            string fileName = richTextBox2.Text + ".cs";
+            //String[] RTB_txt_array = RTB_txt.Split('^');
+            // MessageBox.Show(RTB_txt_array[0]);
+            //MessageBox.Show(RTB_txt_array[1]);
+            
+            defaultClass = defaultClass.Replace("Class1", fileName);
+            //int myIndex = sampClassString.IndexOf("//comment");
             //sampClassString = sampClassString.Replace(" **value**", "")
 
 
-            //var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + fileName);
-            //myStreamWriter.Write(sampClassString);
-            //myStreamWriter.Close();
+            var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + fileName);
+            myStreamWriter.Write(Convert.ToString(defaultClass));
+            myStreamWriter.Close();
+        }
+
+        void insertCode()
+        {
+
         }
     }
 }
