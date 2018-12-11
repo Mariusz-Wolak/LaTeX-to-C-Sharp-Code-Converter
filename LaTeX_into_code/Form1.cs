@@ -23,18 +23,26 @@ namespace LaTeX_into_code
            
             string RTB_txt = richTextBox1.Text;
             string fileName = richTextBox2.Text + ".cs";
+
             //String[] RTB_txt_array = RTB_txt.Split('^');
-            // MessageBox.Show(RTB_txt_array[0]);
-            //MessageBox.Show(RTB_txt_array[1]);
             
-            defaultClass = defaultClass.Replace("Class1", fileName);
-            //int myIndex = sampClassString.IndexOf("//comment");
-            //sampClassString = sampClassString.Replace(" **value**", "")
+            string newClass = defaultClass.Replace("Class1", richTextBox2.Text);
+            int myIndex = newClass.IndexOf("//insertingHere");
+            newClass = newClass.Insert(myIndex, "przerobione na kod\n");
+            newClass = newClass.Insert(myIndex, "przerobione na kod2\n");
+            newClass = newClass.Insert(myIndex, "przerobione na kod3\n");
+
 
 
             var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + fileName);
-            myStreamWriter.Write(Convert.ToString(defaultClass));
+            myStreamWriter.Write(Convert.ToString(newClass));
             myStreamWriter.Close();
+
+
+
+
+
+            MessageBox.Show("Your file has been created.");
         }
 
         void insertCode()
