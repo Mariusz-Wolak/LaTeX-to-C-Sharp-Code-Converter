@@ -13,6 +13,7 @@ namespace LaTeX_into_code
     public partial class Form1 : Form
     {
         string newClass;
+        string paramsLine;
 
         public Form1()
         {
@@ -25,11 +26,9 @@ namespace LaTeX_into_code
            
             string RTB_txt = richTextBox1.Text;
             string fileName = richTextBox2.Text + ".cs";
-            
             newClass = newClass.Replace("Class1", richTextBox2.Text);
-            newClass = newClass.Replace("**arg_1**", RTB_txt);
-            insertCode("przerobione na kod");
-            insertCode("przerobione na kod2");
+
+
 
             var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + fileName);
             myStreamWriter.Write(Convert.ToString(newClass));
@@ -39,18 +38,24 @@ namespace LaTeX_into_code
 
             //cos w stylu equality(Ac,add(multiply(2,multiply(PI,multiply(r,h))),multiply(2,multiply(PI,multiply(r,r)))))
 
-            //wykrywanie znakow, np wykryje "+", to przesyla lewa i prawa czesc do dodawania, tam w dodawaniu tez musi wykrywac i jesli jest np. "^",
-            // to znowu bierze lewa i prawa, jakas rekurencja do tego moze
+            //wykrywanie znakow i kolejnosci dzialan (* wazniejsze niz +, chyba ze nawias), np wykryje "+", to przesyla lewa i prawa czesc do dodawania, tam w dodawaniu tez musi wykrywac i jesli jest np. "^",
+            // to znowu bierze lewa i prawa, jakas rekurencja do tego moze albo przenoszenie tych stringow i pamietanie dzialan
+            
         
 
 
             MessageBox.Show(fileName+" has been created.");
         }
 
-        void insertCode(string addedCode)
+        void insertBody(string addedCode)
         {
-            int myIndex = newClass.IndexOf("//insertingHere");
+            int myIndex = newClass.IndexOf("//insertingBody");
             newClass = newClass.Insert(myIndex, addedCode+"\n\t\t\t");
+        }
+
+        void insertParams()
+        {
+
         }
     }
 }

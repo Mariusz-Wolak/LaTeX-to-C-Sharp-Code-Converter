@@ -8,9 +8,9 @@ namespace LaTeX_into_code
 {
     class Class1
     {
-        double myFunction (double **arg_1**)
+        double myFunction (/*insertingParams*/)
         {
-            //insertingHere
+            //insertingBody
         }
     }
 }
