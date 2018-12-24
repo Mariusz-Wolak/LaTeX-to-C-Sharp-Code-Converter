@@ -48,7 +48,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(518, 38);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = "x+y*z";
             // 
             // button1
             // 
@@ -68,7 +68,7 @@
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(183, 33);
             this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.richTextBox2.Text = "MyClass";
             // 
             // label1
             // 
@@ -97,7 +97,7 @@
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(183, 33);
             this.richTextBox3.TabIndex = 4;
-            this.richTextBox3.Text = "";
+            this.richTextBox3.Text = "myMethod";
             // 
             // checkBox1
             // 

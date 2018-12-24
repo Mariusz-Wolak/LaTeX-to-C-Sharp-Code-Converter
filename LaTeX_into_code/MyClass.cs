@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +7,13 @@ using System.Math;
 
 namespace LaTeX_into_code
 {
-    /*insertingClassName*/
+    static class MyClass
     {
-        /*insertingMethodName*/(/*insertingParams*/)
+         doudble myMethod()
         {
-            /*insertingBody*/
+            
 
-			return /*insertingReturn*/;
+			return ;
         }
     }
 }

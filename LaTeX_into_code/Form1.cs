@@ -24,18 +24,42 @@ namespace LaTeX_into_code
             myClass = System.IO.File.ReadAllText(@"M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\ClassTemplate.txt");
            
             string RTB_txt = richTextBox1.Text;
-            string filename = richTextBox2.Text;
-            string methodName = richTextBox3.Text;
+            string className;
+            string methodName;
 
-            myClass = myClass.Replace("/*insertingClassName*/", filename);
+            bool staticClass = checkBox1.Checked;
+            bool staticMethod = checkBox2.Checked;
+
+            if (staticClass)
+            {
+                className = "static class " + richTextBox2.Text;
+            }
+            else
+            {
+                className = "class " + richTextBox2.Text;
+            }
+
+            if (staticMethod)
+            {
+                methodName = "static double " + richTextBox3.Text;
+            }
+            else
+            {
+                methodName = "double " + richTextBox3.Text;
+            }
+
+            myClass = myClass.Replace("/*insertingClassName*/", className);
             myClass = myClass.Replace("/*insertingMethodName*/", methodName);
 
-            //static
+            
 
-            string returnString = RTB_txt;
+           // string[] returnString = RTB_txt.Split('+'); //wlasna metoda split zliczajaca operatory i ile tych tablic jest ostatecznie?
 
+            //MessageBox.Show(returnString[0]);
+           // MessageBox.Show(returnString[1]);
+            //MessageBox.Show(returnString[2]);
 
-            myClass = myClass.Replace("/*insertingReturn*/", returnString);
+            //myClass = myClass.Replace("/*insertingReturn*/", returnString);
 
 
 
@@ -45,10 +69,10 @@ namespace LaTeX_into_code
             myClass = myClass.Replace("/*insertingParams*/", "");
             myClass = myClass.Replace("/*insertingBody*/", "");
             myClass = myClass.Replace("/*insertingReturn*/", "");
-            var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + filename+".cs");
+            var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + richTextBox2.Text + ".cs");
             myStreamWriter.Write(Convert.ToString(myClass));
             myStreamWriter.Close();
-            MessageBox.Show(filename+".cs has been created.");
+            MessageBox.Show(richTextBox2.Text + ".cs has been created.");
         }
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
