@@ -13,7 +13,7 @@ namespace LaTeX_into_code
         {
             /*insertingBody*/
 
-			/*insertingReturn*/
+			return /*insertingReturn*/;
         }
     }
 }

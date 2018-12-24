@@ -30,13 +30,21 @@ namespace LaTeX_into_code
             myClass = myClass.Replace("/*insertingClassName*/", filename);
             myClass = myClass.Replace("/*insertingMethodName*/", methodName);
 
+            //static
 
-            
+            string returnString = RTB_txt;
+
+
+            myClass = myClass.Replace("/*insertingReturn*/", returnString);
+
 
 
             // apend jakby cos dopisac?
             //jesli jest "=", to bierzemy tylko prawa czesc
 
+            myClass = myClass.Replace("/*insertingParams*/", "");
+            myClass = myClass.Replace("/*insertingBody*/", "");
+            myClass = myClass.Replace("/*insertingReturn*/", "");
             var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + filename+".cs");
             myStreamWriter.Write(Convert.ToString(myClass));
             myStreamWriter.Close();
