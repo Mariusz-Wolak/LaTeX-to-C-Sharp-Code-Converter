@@ -84,11 +84,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(181, 83);
+            this.label2.Location = new System.Drawing.Point(192, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 25);
+            this.label2.Size = new System.Drawing.Size(149, 25);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Function name:";
+            this.label2.Text = "Method name:";
             // 
             // richTextBox3
             // 
