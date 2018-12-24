@@ -7,13 +7,13 @@ using System.Math;
 
 namespace LaTeX_into_code
 {
-    class Class1
+    class /*insertingClassName*/
     {
-        double myFunction (/*insertingParams*/)
+        double /*insertingMethodName*/ (/*insertingParams*/)
         {
-            //insertingBody
+            /*insertingBody*/
 
-			//insertingReturn
+			/*insertingReturn*/
         }
     }
 }

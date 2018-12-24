@@ -40,15 +40,12 @@ namespace LaTeX_into_code
 
             insertBody(parse(RTB_txt));
 
-            //cos w stylu equality(Ac,add(multiply(2,multiply(PI,multiply(r,h))),multiply(2,multiply(PI,multiply(r,r)))))
+            
 
-            //wykrywanie znakow i kolejnosci dzialan (* wazniejsze niz +, chyba ze nawias), np wykryje "+", to przesyla lewa i prawa czesc do dodawania, tam w dodawaniu tez musi wykrywac i jesli jest np. "^",
-            // to znowu bierze lewa i prawa, jakas rekurencja do tego moze albo przenoszenie tych stringow i pamietanie dzialan
+            
 
-            //robic znak po znaku, drzewo ze stringa, uzytkownik wybiera nazwe funkcji, zaznacza czy statyczna, apend jakby cos dopisac?
-
-            //zeby bylo latwiej znak po znaku, moge zrobic Replace z /sqrt na np. P, albo sprawdzac czy jesli kolejne znaki po "/" to "sqrt", to wtedy jest
-            //pierwiastek
+            // , zaznacza czy statyczna, apend jakby cos dopisac?
+            
 
             MessageBox.Show(fileName+" has been created.");
         }
@@ -111,6 +108,20 @@ namespace LaTeX_into_code
             
 
             return doTestu;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                checkBox2.Checked = true;
+                checkBox2.Enabled = false;
+            }
+            else
+            {
+                checkBox2.Checked = false;
+                checkBox2.Enabled = true;
+            }
         }
 
         //void additionCounter(string toParse, char search)
