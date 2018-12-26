@@ -9,7 +9,7 @@ namespace LaTeX_into_code
 {
     class MyClass
     {
-        double myMethod()
+        static double myMethod()
         {
             
 
