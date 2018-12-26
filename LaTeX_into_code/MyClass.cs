@@ -7,13 +7,13 @@ using System.Math;
 
 namespace LaTeX_into_code
 {
-    static class MyClass
+    class MyClass
     {
-         doudble myMethod()
+        double myMethod()
         {
             
 
-			return ;
+			return x+y*z;
         }
     }
 }

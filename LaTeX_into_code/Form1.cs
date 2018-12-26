@@ -50,13 +50,12 @@ namespace LaTeX_into_code
 
             myClass = myClass.Replace("/*insertingClassName*/", className);
             myClass = myClass.Replace("/*insertingMethodName*/", methodName);
-
             
 
-           // string[] returnString = RTB_txt.Split('+'); //wlasna metoda split zliczajaca operatory i ile tych tablic jest ostatecznie?
+            // string[] returnString = RTB_txt.Split('+'); //wlasna metoda split zliczajaca operatory i ile tych tablic jest ostatecznie?
 
             //MessageBox.Show(returnString[0]);
-           // MessageBox.Show(returnString[1]);
+            // MessageBox.Show(returnString[1]);
             //MessageBox.Show(returnString[2]);
 
             //myClass = myClass.Replace("/*insertingReturn*/", returnString);
@@ -68,11 +67,16 @@ namespace LaTeX_into_code
 
             myClass = myClass.Replace("/*insertingParams*/", "");
             myClass = myClass.Replace("/*insertingBody*/", "");
-            myClass = myClass.Replace("/*insertingReturn*/", "");
+            insertReturn(RTB_txt);
             var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + richTextBox2.Text + ".cs");
             myStreamWriter.Write(Convert.ToString(myClass));
             myStreamWriter.Close();
             MessageBox.Show(richTextBox2.Text + ".cs has been created.");
+        }
+
+        void insertReturn(string returnString)
+        {
+            myClass = myClass.Replace("/*insertingReturn*/", returnString);
         }
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
