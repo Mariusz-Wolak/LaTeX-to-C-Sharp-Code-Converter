@@ -31,7 +31,6 @@ namespace LaTeX_into_code
             bool staticMethod = checkBox2.Checked;
             string[] splitString;
             string paramsString = "";
-            string bodyString = "";
 
             // \frac{1}{2n},  \sum^n_{l=0}(-1)^{l}
 
@@ -55,7 +54,7 @@ namespace LaTeX_into_code
             myClass = myClass.Replace("/*insertingClassName*/", className);
             myClass = myClass.Replace("/*insertingMethodName*/", methodName);
             
-            getVariables(RTB_txt, ref paramsString, ref bodyString);
+            getVariables(RTB_txt, ref paramsString);
 
             //if nothing to be splitted, rewrite "str" (jesli nie ma operatora *, to stringa mi nie podzieli tlyko pominie np. samego "x")
             // MOGE ZAMIENIC WSZYSTKIE OPERATORY NA NP. SPACJE I POZNIEJ ZROBIC SPLITA WEDLUG SPACJI I MAM SAME ZMIENNE???
@@ -76,7 +75,6 @@ namespace LaTeX_into_code
             // apend jakby cos dopisac?
             //jesli jest "=", to bierzemy tylko prawa czesc
             myClass = myClass.Replace("/*insertingParams*/", paramsString);
-            myClass = myClass.Replace("/*insertingBody*/", bodyString);
             myClass = myClass.Replace("/*insertingReturn*/", RTB_txt);
             var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + richTextBox2.Text + ".cs");
             myStreamWriter.Write(Convert.ToString(myClass));
@@ -99,7 +97,7 @@ namespace LaTeX_into_code
             }
         }
 
-        void getVariables(string equation, ref string paramsString, ref string bodyString)
+        void getVariables(string equation, ref string paramsString)
         {
             for (int i = 0; i < operators.Length; i++)
             {
@@ -120,13 +118,10 @@ namespace LaTeX_into_code
                 {
                     variables.Add(variable);
                     paramsString += ", double " + variable;
-                    bodyString += ", " + variable;
                 }
             }
 
             paramsString = paramsString.Remove(0, 2);
-            bodyString = bodyString.Remove(0, 2);
-            bodyString = "double " + bodyString + ";";
         }
     }
 }

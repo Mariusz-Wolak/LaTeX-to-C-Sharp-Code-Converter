@@ -11,8 +11,6 @@ namespace LaTeX_into_code
     {
         /*insertingMethodName*/(/*insertingParams*/)
         {
-            /*insertingBody*/
-
 			return /*insertingReturn*/;
         }
     }
