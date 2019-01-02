@@ -9,11 +9,11 @@ namespace LaTeX_into_code
 {
     class MyClass
     {
-        static double myMethod()
+        double myMethod(double a, double c, double e)
         {
-            
+            double a, c, e;
 
-			return x+y*z;
+			return a+2-c++3.14-e;
         }
     }
 }

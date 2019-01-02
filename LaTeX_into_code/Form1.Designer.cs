@@ -48,7 +48,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(518, 38);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "x+y*z";
+            this.richTextBox1.Text = "a+2-c++3.14-e";
             // 
             // button1
             // 
