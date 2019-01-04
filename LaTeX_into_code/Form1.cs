@@ -13,7 +13,7 @@ namespace LaTeX_into_code
 {
     public partial class Form1 : Form
     {
-        string[] operators = { "+", "-" };
+        string[] operators = { "+", "-", "^", "\frac", "{", "}"  };
         List<string> variables = new List<string>();
 
         public Form1()
@@ -33,7 +33,6 @@ namespace LaTeX_into_code
             string paramsString = "";
 
             // \frac{1}{2n},  \sum^n_{l=0}(-1)^{l}
-
 
             if (staticClass)
             {
@@ -55,25 +54,8 @@ namespace LaTeX_into_code
             myClass = myClass.Replace("/*insertingMethodName*/", methodName);
             
             getVariables(RTB_txt, ref paramsString);
-
-            //if nothing to be splitted, rewrite "str" (jesli nie ma operatora *, to stringa mi nie podzieli tlyko pominie np. samego "x")
-            // MOGE ZAMIENIC WSZYSTKIE OPERATORY NA NP. SPACJE I POZNIEJ ZROBIC SPLITA WEDLUG SPACJI I MAM SAME ZMIENNE???
-            // w tym celu moge albo poszukac splita wedlug stringa (np. "myOperator") albo zamienic wszystkie operatory na jednoznakowe, np "sqrt" jako
-            // "S" i wpisac, ze to jest operator i by tego nie uzywac w rownaniu jako zmiennej;
-
-            //lista na operatory latecha (np "/times") i kazde po kolei zamieniac na np Q i robic splita wedlug Q
-
-            //mozna dodac liste slow kluczowych (np. "\begin", "\end") i je wyrzucic ze stringa
-
-
-
-
-
-
-            // zeby dzialal split na wszystko, moge najpierw przeksztalcic rownanie na operatory z jednym znakiem (np sqrt to S) i podzielic, wyjac zmienne
-            // a pozniej zamienic znowu
+            
             // apend jakby cos dopisac?
-            //jesli jest "=", to bierzemy tylko prawa czesc
             myClass = myClass.Replace("/*insertingParams*/", paramsString);
             myClass = myClass.Replace("/*insertingReturn*/", RTB_txt);
             var myStreamWriter = new System.IO.StreamWriter("M:\\M\\zgrywane\\programowanie\\C#\\LaTeX_into_code\\LaTeX_into_code\\" + richTextBox2.Text + ".cs");
