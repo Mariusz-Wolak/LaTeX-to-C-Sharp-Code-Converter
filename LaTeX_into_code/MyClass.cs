@@ -9,9 +9,9 @@ namespace LaTeX_into_code
 {
     class MyClass
     {
-        double myMethod(double a, double n2, double c, double e)
+        double myMethod(double x, double n, double y)
         {
-			return a+n2-c++3.14-e;
+			return (1)/(  x/n)+Math.Log(x+1)-Math.PI-Pow(3*y,2/n)*1/Math.Tan(30);
         }
     }
 }
